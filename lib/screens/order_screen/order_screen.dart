@@ -25,7 +25,11 @@ class _OrderScreenState extends State<OrderScreen> {
               child: Column(
                 children: [
                   Table(border: TableBorder.all(), children: [
-                    buildRow(['name', 'name', 'name'])
+                    buildRow(
+                      ['name', 'fooditem', 'assign chef'],
+                      "",
+                      "",
+                    )
                   ]),
                   Expanded(
                       child: StreamBuilder(
@@ -41,11 +45,15 @@ class _OrderScreenState extends State<OrderScreen> {
                                     return Table(
                                         border: TableBorder.all(),
                                         children: [
-                                          buildRow([
+                                          buildRow(
+                                            [
+                                              orders['username'],
+                                              orders['item'],
+                                              'clickHere to select chef',
+                                            ],
                                             orders['username'],
                                             orders['item'],
-                                            'clickHere to select chef'
-                                          ])
+                                          )
                                         ]);
                                   });
                             }
@@ -60,13 +68,16 @@ class _OrderScreenState extends State<OrderScreen> {
         ));
   }
 
-  TableRow buildRow(List<dynamic> cells) {
+  TableRow buildRow(List<dynamic> cells, String name, String food) {
     return TableRow(
         children: cells
             .map((e) => InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SelectChef()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              SelectChef(username: name, fooditem: food)));
                 },
                 child: Center(child: Text(e))))
             .toList());

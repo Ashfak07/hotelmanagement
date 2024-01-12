@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hotelmanagement/screens/home_screen/widgets/notification.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,16 @@ class _HomeScreenState extends State<HomeScreen> {
           'Dashboard',
           style: TextStyle(fontSize: 40),
         ),
+        actions: [
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NotificationScreen()));
+              },
+              child: Icon(Icons.notifications)),
+        ],
       ),
       body: Center(
         child: Column(

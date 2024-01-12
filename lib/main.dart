@@ -2,9 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelmanagement/controller/food_add_controller/food_add_controller.dart';
 import 'package:hotelmanagement/controller/itemsadd_controller/items_add_controller.dart';
+import 'package:hotelmanagement/controller/orderasigning_controller/order_assigning.dart';
 import 'package:hotelmanagement/screens/bottomnavigation/bottom_navigation.dart';
 import 'package:hotelmanagement/screens/chooselogintype/chooselogintype.dart';
-import 'package:hotelmanagement/screens/home_screen/home_screen.dart';
+import 'package:hotelmanagement/screens/home_screen/adminhome_screen.dart';
 import 'package:hotelmanagement/screens/login_screen/login_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ItemAddController()),
-        ChangeNotifierProvider(create: (context) => fooditems())
+        ChangeNotifierProvider(create: (context) => fooditems()),
+        ChangeNotifierProvider(create: (context) => OrderAssigning())
       ],
       child: MaterialApp(
         home: ChooseLoginType(),

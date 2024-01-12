@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotelmanagement/controller/food_add_controller/food_add_controller.dart';
 import 'package:hotelmanagement/screens/food_item_screen/food_item_screen.dart';
 import 'package:hotelmanagement/screens/inventory_screen/inventory_screen.dart';
-import 'package:hotelmanagement/screens/home_screen/home_screen.dart';
+import 'package:hotelmanagement/screens/home_screen/adminhome_screen.dart';
 import 'package:hotelmanagement/screens/order_screen/order_screen.dart';
 
 class Bottomnavigation extends StatefulWidget {
